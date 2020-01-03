@@ -19,8 +19,8 @@ const personsReducer = (state = initialState, action) => {
     case actionTypes.ON_ADD:
       const newPerson = {
         id: Math.random(),
-        name: 'Sam',
-        age: Math.floor( Math.random() * 40 )
+        name: action.payload.name || 'Sam',
+        age: action.payload.age || Math.floor( Math.random() * 40 )
       }
       updatedPersons = [...state.persons];
       updatedPersons = updatedPersons.concat(newPerson);
