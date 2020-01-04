@@ -1,4 +1,5 @@
-import * as actionCreators from '../actions/actions';
+import * as actionTypes from '../actions/actionTypes';
+import * as actionCreators from '../actions/actionCreators';
 
 const initialState = {
   results: [],
@@ -8,7 +9,7 @@ const resultsReducer = (state = initialState, action) => {
   let updatedResults;
 
   switch (action.type) {
-    case actionCreators.storeResult().type:
+    case actionTypes.STORE_RESULT:
       updatedResults = [...state.results];
       const result = action.result;
       updatedResults.push(result);
@@ -18,7 +19,7 @@ const resultsReducer = (state = initialState, action) => {
         results: updatedResults,
       }
 
-    case actionCreators.deleteResult().type:
+    case actionTypes.DELETE_RESULT:
       updatedResults = [...state.results];
       updatedResults = updatedResults.filter((res, i) => i !== action.index);
       return {
