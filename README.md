@@ -6,4 +6,5 @@ Practicing using Redux with React
   redux devtools
   redux-thunk (async)
   axios (req res)
+  middleware
 ```
